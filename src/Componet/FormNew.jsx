@@ -15,7 +15,7 @@ function Form() {
         } else {
             setCount(count + 1);
             obj.id = count + 1;
-            setObj({...obj});
+            setObj({ ...obj });
             setArray([...array, obj]);
         }
         setObj({});
@@ -25,10 +25,10 @@ function Form() {
         const selectedDate = e.target.value;
         const formattedDate = selectedDate.split('-').reverse().join('-');
         setObj({ ...obj, birthdate: formattedDate });
-        
+
     }
-    
-     const handleFileChange = (e) => {
+
+    const handleFileChange = (e) => {
         const file = e.target.files[0];
         const reader = new FileReader();
         reader.onload = (event) => {
@@ -38,11 +38,11 @@ function Form() {
     };
 
     const getInputValue = (e) => {
-        const { name, value} = e.target;
-      
-            setObj({ ...obj, [name]: value });  
+        const { name, value } = e.target;
+
+        setObj({ ...obj, [name]: value });
     };
-    
+
     const deleteData = (id) => {
         let index = array.findIndex(x => x.id === id);
         array.splice(index, 1);
@@ -85,7 +85,7 @@ function Form() {
                 </div>
                 <div>
                     <label className='w-100'>Birth Date</label>
-                    <input type="date" className='w-100 border-0 rounded py-1 px-2 mb-2' name="birthdate"  onChange={dateChange}/>
+                    <input type="date" className='w-100 border-0 rounded py-1 px-2 mb-2' name="birthdate" onChange={dateChange} />
                 </div>
                 <div className="mt-2">
                     <label className="w-100">Gender</label>
@@ -99,10 +99,12 @@ function Form() {
                 <div className="mt-2">
                     <label className="w-100">Vehicle</label>
                     <div>
-                        <input type="checkbox" value="Bike" name="bike" checked={obj.gender === "Bike"} onChange={getInputValue} /> Bike
+                        <input type="checkbox" value="Bike" name="bike" checked={obj.vehicle
+                            
+                            === "Bike"} onChange={getInputValue} /> Bike
                     </div>
                     <div>
-                        <input type="checkbox" value="Car" name="car" checked={obj.gender === "Car"} onChange={getInputValue} /> Car
+                        <input type="checkbox" value="Car" name="car" checked={obj.vehicle === "Car"} onChange={getInputValue} /> Car
                     </div>
                 </div>
                 <div className="mt-2">
@@ -114,7 +116,7 @@ function Form() {
                         <img src={obj.image} alt="Selected" className="previewImage" width="80px" height="80px" />
                     </div>
                 )}
-             
+
                 <input type='submit' className='btn btn-success border-0 mt-4' style={{ backgroundColor: 'purple' }} onClick={saveData} value='Save' />
             </form>
 
