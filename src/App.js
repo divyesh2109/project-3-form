@@ -4,6 +4,7 @@ import Form from './Componet/Form.jsx'
 import Forms from './Componet/newForm.jsx'
 import FormNew from './Componet/FormNew.jsx'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import LifeCycle from './Componet/LifeCycle.jsx';
 
 
 function App() {
@@ -11,7 +12,8 @@ function App() {
     <>
       {/* <Form /> */}
       {/* <FormNew /> */}
-      <Forms />
+      {/* <Forms /> */}
+      <LifeCycle />
 
     </>
   );
